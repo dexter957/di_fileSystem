@@ -41,4 +41,6 @@ The di file has a header, that contains its size (in blocks and in bytes), the f
 (directories hierarchy is stored afterwards), the first block of metadata, the total number of dinodes, and the number of files sto
 
 
-
+##### **Technical**
+* @Tsuyomaru
+* @dexter957
