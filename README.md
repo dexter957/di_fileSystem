@@ -25,20 +25,21 @@ Flags may be used to determine what should the utility do in a specific call:
 ##### **Technical**
 
 It can be derived from the above that we need a way to store, in a flat form, information about files: actual data, as well as metadata about size, ownership, hierarchy, exact storage position, etc. We also need to be able to retrieve all this information. So we are actually implementing some very basic functions of a file system, and therefore we can think of the di file as our hard drive. Thus, much like the hard drive, the di file consists of (memory) blocks (here of variable length) on which is stored everything about a file (data and metadata).
-The basic entity of the di file system, is the _ _dinode_ _ . A dinode (much like an inode) describes a file entity:
+The basic entity of the di file system, is the _dinode_ . A dinode (much like an inode) describes a file entity:
 owner, group, directory, access rights, size (in bytes), access timestamps, and the starting block of the file. Each dinode has a unique
 number that identifies it. So we basically count the entities stored in our file, by the number of allocated dinodes.
 The file entities of the di file system are the plain file, and the directory.
-###### _ _File_ _
+###### _File_ 
 A file is an entity, described by its name, the number of blocks and bytes (these two may differ because of fragmentation) it occupies.
 
-###### _ _Directory_ _
+###### _Directory_ 
 A directory is a file that contains entries about its contents, that may be other directories, or files. For each of these entries, we need to know
 the name of the contained file, the length of that name, and the dinode for that file.
 
-###### _ _Header_ _
+###### _Header_ 
 The di file has a header, that contains its size (in blocks and in bytes), the first block of the data section, the last block in the data section
 (directories hierarchy is stored afterwards), the first block of metadata, the total number of dinodes, and the number of files sto
 
-
-
+##### **Authors**
+* [Tsuyomaru](https://github.com/Tsuyomaru) 
+* [dexter957](https://github.com/dexter957)
